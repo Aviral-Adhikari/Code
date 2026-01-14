@@ -1,0 +1,19 @@
+.spots {
+    background-color: aquamarine;
+    padding: 20px;
+    margin: 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.spots h2 {
+    margin-bottom: 10px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.spots p {
+    font-size: 16px;
+    line-height: 1.6;
+}

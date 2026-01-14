@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Places to Roam Locally in Kathmandu</h1>
+
+<div class ="localplaces">
+
+
+    <div class="free">
+        <h3>Gundu</h3>
+        <p>Gundu is a local and popular picnic and scenic spot, where the crashed army plane is one of the main highlights.</p>
+    </div>
+
+    <div class="free">
+        <h3>Nagarkot</h3>
+        <p>Nagarkot is a perfect place for sightseeing and enjoying local and premium hospitality.</p>
+    </div>
+
+    <div class="free">
+        <h3>Dhulikhel</h3>
+        <p>Dhulikhel is known for its beautiful landscapes and cultural heritage, making it a must-visit destination.</p>
+    </div>
+
+    <button id="btn">Show / Hide Paid Options</button>
+
+
+    <div id="paid">
+    <div>
+        <h3>Aagantuk Resort</h3>
+        <p>Aagantuk resort is one of the premium resort situated in Dhulikhel.</p>
+    </div>
+
+    <div>
+        <h3>Club Himalaya</h3>
+        <p>Club Himalaya is a popular resort located in Nagarkot, known for its stunning views of the Himalayas and excellent hospitality.</p>
+    </div>
+    
+</div>
+
+
+
+
+
+<script>
+    var paidPlaces = document.getElementById("paid");
+    var button = document.getElementById("btn");
+
+    button.onclick = function () {
+        if (paidPlaces.style.display === "none") {
+            paidPlaces.style.display = "block";
+        } else {
+            paidPlaces.style.display = "none";
+        }
+    };
+</script>
+
+</body>
+</html>
