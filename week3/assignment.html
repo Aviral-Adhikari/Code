@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Events Demo</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<style>
+    .localplaces {
+        width: 600px;
+    }
+
+    .free {
+        background: #e6f2ff;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 2px solid transparent;
+        transition: 0.3s;
+    }
+
+    #paid {
+        background: #fff3cd;
+        padding: 10px;
+        display: none;
+        border: 2px dashed orange;
+    }
+
+    button {
+        padding: 10px 15px;
+        margin: 10px 0;
+        cursor: pointer;
+    }
+
+    .clicked {
+        background: green;
+        color: white;
+    }
+
+    .dblclicked {
+        background: crimson;
+        color: white;
+    }
+
+    .hovered {
+        border-color: blue;
+        transform: scale(1.03);
+    }
+</style>
+</head>
+
+<body>
+
+<h1>Places to Roam Locally in Kathmandu</h1>
+
+<div class="localplaces">
+
+    <div class="free">
+        <h3>Gundu</h3>
+        <p>Gundu is a local and popular picnic and scenic spot.</p>
+    </div>
+
+    <div class="free">
+        <h3>Nagarkot</h3>
+        <p>Nagarkot is a perfect place for sightseeing.</p>
+    </div>
+
+    <div class="free">
+        <h3>Dhulikhel</h3>
+        <p>Dhulikhel is known for beautiful landscapes.</p>
+    </div>
+
+    <button id="btn">Show Paid Options</button>
+
+    <div id="paid">
+        <h3>Aagantuk Resort</h3>
+        <p>Premium resort in Dhulikhel.</p>
+
+        <h3>Club Himalaya</h3>
+        <p>Popular resort in Nagarkot.</p>
+    </div>
+
+</div>
+
+<script>
+$(document).ready(function () {
+
+    // Single click
+    $(".free").click(function () {
+        $(this).toggleClass("clicked");
+    });
+
+    // Double click
+    $(".free").dblclick(function () {
+        $(this).toggleClass("dblclicked");
+    });
+
+    // Mouse enter
+    $(".free").mouseenter(function () {
+        $(this).addClass("hovered");
+    });
+
+    // Mouse leave
+    $(".free").mouseleave(function () {
+        $(this).removeClass("hovered");
+    });
+
+    // Button click (show / hide)
+    $("#btn").click(function () {
+        $("#paid").slideToggle(400);
+        $(this).text(
+            $(this).text() === "Show Paid Options"
+            ? "Hide Paid Options"
+            : "Show Paid Options"
+        );
+    });
+
+});
+</script>
+
+</body>
+</html>
