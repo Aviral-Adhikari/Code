@@ -6,22 +6,30 @@ import {
   ScrollView,
   TextInput,
   TouchableOpacity,
+  Image,
 } from "react-native";
 
 export default function LocalifyDashboard() {
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
-
-      {/* Header */}
+      
       <View style={styles.header}>
-        <Text style={styles.location}>Exploring Pokhara</Text>
+        <Text style={styles.location}>Exploring Kathmandu</Text>
         <TextInput
           style={styles.searchBar}
           placeholder="Search food, places, hotels, experiences"
         />
       </View>
 
-      {/* Categories */}
+
+      <View style={styles.heroimage}>
+        <Image
+          source={{uri: "https://github.com/ificodeinclusive/ificodeweb/blob/main/images/banner.png?raw=true"}}
+          style={styles.heroImageStyle}
+          resizeMode="cover"
+        />
+      </View>
+
       <View style={styles.row}>
         <CategoryCard title="Local Hotels" />
         <CategoryCard title="Food and Cafes" />
@@ -37,31 +45,35 @@ export default function LocalifyDashboard() {
         <CategoryCard title="Nature and Views" />
       </View>
 
-      {/* Hidden Gems */}
       <Text style={styles.sectionTitle}>Hidden Gems Near You</Text>
 
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-        <PlaceCard name="Secret Lake View" distance="1.2 km away" />
-        <PlaceCard name="Mystic Waterfall" distance="2.5 km away" />
-        <PlaceCard name="Old Temple Cave" distance="850 m away" />
+        <PlaceCard name="Kispang Gaupali" distance="5 Hours Away" />
+        <PlaceCard name="Rani Jhula" distance="1.5 Hours Away" />
+        <PlaceCard name="Manichud Daha" distance="1 Day" />
       </ScrollView>
 
-      {/* Loved by Locals */}
       <Text style={styles.sectionTitle}>Loved by Locals</Text>
 
       <LocalPick
-        name="Sunset at Sarangkot"
+        name="Sunrise at Nagarkot"
         rating="4.8"
         note="Recommended by locals"
       />
 
       <LocalPick
-        name="Lakeside Street Food"
-        rating="Popular this week"
-        note="Highly rated by visitors"
+        name="Narayanhiti Palace"
+        rating="4.7"
+        note="History of Nepal"
       />
 
-      {/* Map Section */}
+      <LocalPick
+        name="Asan Bazaar"
+        rating="4.2"
+        note="Explore Local Markets"
+      />
+
+
       <View style={styles.mapCard}>
         <Text style={styles.mapTitle}>Discover on the Map</Text>
         <TouchableOpacity style={styles.mapButton}>
@@ -73,7 +85,6 @@ export default function LocalifyDashboard() {
   );
 }
 
-/* ---------- Components ---------- */
 
 const CategoryCard = ({ title }) => (
   <TouchableOpacity style={styles.categoryCard}>
@@ -96,7 +107,6 @@ const LocalPick = ({ name, rating, note }) => (
   </View>
 );
 
-/* ---------- Styles ---------- */
 
 const styles = StyleSheet.create({
   container: {
@@ -109,14 +119,23 @@ const styles = StyleSheet.create({
   location: {
     fontSize: 18,
     fontWeight: "600",
-    marginBottom: 10,
-    padding: 20,
+    marginBottom: 5,
+    marginTop: 25,
+    padding: 10,
   },
   searchBar: {
-    backgroundColor: "#fffffff8",
+    backgroundColor: "#FFFFFF",
     padding: 12,
     borderRadius: 12,
     elevation: 2,
+  },
+  heroimage: {
+    marginBottom: 20,
+  },
+  heroImageStyle: {
+    width: "100%",
+    height: 180,
+    borderRadius: 16,
   },
   row: {
     flexDirection: "row",
