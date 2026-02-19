@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Firebase Realtime DB Demo</title>
+</head>
+
+<body>
+  <h1>Firebase Real Time Integration - Performing CRUD Operations</h1>
+
+  <script type="module" src="script.js"></script>
+
+
+
+  <h2>Employee Information</h2>
+  <input type="text" id="emp-id" placeholder="Employee ID" />
+  <input type="text" id="emp-name" placeholder="Name" />
+  <input type="email" id="emp-email" placeholder="Email" />
+  <input type="date" id="emp-birthday" />
+  <input type="text" id="emp-phone" placeholder="Phone" />
+  <input type="text" id="emp-gender" placeholder="Gender" />
+  <button onclick="writeEmpInfo(
+  document.getElementById('emp-id').value,
+  document.getElementById('emp-name').value,
+  document.getElementById('emp-email').value,
+  document.getElementById('emp-birthday').value,
+  document.getElementById('emp-phone').value,
+  document.getElementById('emp-gender').value
+)">Submit Details</button>
+
+  <br> <br>
+
+
+
+  <h2>View Employee Information</h2>
+  <button onclick="readEmpInfo()">View All Employee</button> <br> <br>
+
+
+  <h2>Delete Employee Information</h2>
+  <input type="text" id="delete-emp-id" placeholder="Employee ID" />
+  <button onclick="deleteEmpInfo(
+  document.getElementById('delete-emp-id').value
+)">Delete</button> <br> <br>
+
+
+  <h2>Update Employee Information</h2>
+  <input type="text" id="upd-emp-id" placeholder="Employee ID" />
+  <input type="text" id="upd-emp-name" placeholder="New Name" />
+  <input type="email" id="upd-emp-email" placeholder="New Email" />
+  <input type="date" id="upd-emp-birthday" />
+  <input type="text" id="upd-emp-phone" placeholder="New Phone" />
+  <input type="text" id="upd-emp-gender" placeholder="New Gender" />
+
+  <button onclick="updateEmpInfo(
+  document.getElementById('upd-emp-id').value,
+  {
+    name: document.getElementById('upd-emp-name').value,
+    email: document.getElementById('upd-emp-email').value,
+    birthday: document.getElementById('upd-emp-birthday').value,
+    phone: document.getElementById('upd-emp-phone').value,
+    gender: document.getElementById('upd-emp-gender').value
+  }
+)"> Update Employee </button>
+  <br> <br>
+
+
+  <br> <br> <br>
+  <h2>Update User</h2>
+  <input type="text" id="update-id" placeholder="User ID" />
+  <input type="text" id="update-name" placeholder="New Name" />
+  <input type="email" id="update-email" placeholder="New Email" />
+  <button onclick="updateUserData(
+    document.getElementById('update-id').value,
+    {
+      name: document.getElementById('update-name').value,
+      email: document.getElementById('update-email').value
+    }
+  )">Update User</button>
+
+
+
+
+
+
+  <h2>Create / Write User</h2>
+  <input type="text" id="create-id" placeholder="User ID" />
+  <input type="text" id="create-name" placeholder="Name" />
+  <input type="email" id="create-email" placeholder="Email" />
+  <button onclick="writeUserData(
+    document.getElementById('create-id').value,
+    document.getElementById('create-name').value,
+    document.getElementById('create-email').value
+  )">Write User</button>
+
+
+
+
+  <h2>Read Users</h2>
+  <button onclick="readUser()">Read All Users (Check Console)</button>
+
+  <h2>Update User</h2>
+  <input type="text" id="update-id" placeholder="User ID" />
+  <input type="text" id="update-name" placeholder="New Name" />
+  <input type="email" id="update-email" placeholder="New Email" />
+  <button onclick="updateUserData(
+    document.getElementById('update-id').value,
+    {
+      name: document.getElementById('update-name').value,
+      email: document.getElementById('update-email').value
+    }
+  )">Update User</button>
+
+  <h2>Delete User</h2>
+  <input type="text" id="delete-id" placeholder="User ID" />
+  <button onclick="deleteUserData(
+    document.getElementById('delete-id').value
+  )">Delete User</button>
+</body>
+
+</html>
